@@ -5,10 +5,11 @@ import time
 # Setting page configuration
 st.set_page_config(
     layout='centered',
-    page_title='Income Tax Calculator',
+    page_title='Income Tax Calculator'
 )
+st.markdown('<head> INDIAN INCOME TAX CALCULATOR </head>',unsafe_allow_html=True)
 st.markdown('<center> <h1> INDIAN INCOME TAX CALCULATOR </h1> </center>',unsafe_allow_html=True)
-
+st.markdown('<center> Generate estimated payslips with a few clicks! </center>',unsafe_allow_html=True)
 
 # Helper functions
 
@@ -153,7 +154,7 @@ st.markdown('## Income Information')
 salaryinfo = st.beta_expander('Click to enter your salary details')
 
 with salaryinfo:
-    gross_salary = st.number_input('Enter your yearly gross salary here',help = 'This is you annual gross salary and does not include employer provident fund contribution or any other benefits')   
+    gross_salary = st.number_input('Enter your yearly gross salary here',help = 'This is you annual gross salary and does not include bonus, employer provident fund contribution or any other benefits')   
     bonusinfo = st.beta_columns(2)
     with bonusinfo[0]:
         bonustype = st.selectbox('Enter the bonus type',options=['Percentage of Gross','Fixed Value'])
@@ -224,6 +225,8 @@ if calculate:
     generatepayslip(gross_salary,bonus_val,reimbursement_val,bpp,epf_inclusion_flag,section80c,nps,rent,lta,h_loan_principal,h_loan_interest,employee_pf,employer_pf)
 
 
+
+st.markdown('<br> <br> <br> <br> <br> <br>  <br> <br> <br>  <br> <br> <br> <center> Prepared with love by Abhik Chakraborty </center>',unsafe_allow_html=True)
 #Streamlit hack to remove menu and footer
 hide_streamlit_style = """
             <style>
